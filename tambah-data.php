@@ -8,7 +8,9 @@ function tambah($data)
 {
   global $conn;
 
-  $nrp = htmlspecialchars($data["nrp"]);
+  $nis = htmlspecialchars($data["nis"]);
+  $hobi = htmlspecialchars($data["hobi"]);
+  $makanan = htmlspecialchars($data["makanan"]);
   $nama = htmlspecialchars($data["nama"]);
   $email = htmlspecialchars($data["email"]);
   $jurusan = htmlspecialchars($data["jurusan"]);
@@ -19,9 +21,9 @@ function tambah($data)
     return false;
   }
 
-  $query = "INSERT INTO mahasiswa
+  $query = "INSERT INTO siswa
 				VALUES
-			  ('', '$nrp', '$nama', '$email', '$jurusan', '$gambar')
+			  ('', '$nis', '$nama', '$email', '$jurusan', '$hobi', '$makanan', '$gambar')
 			";
   mysqli_query($conn, $query);
 

@@ -9,10 +9,12 @@ function ubah($data)
   global $conn;
 
   $id = $data["id"];
-  $nrp = htmlspecialchars($data["nrp"]);
+  $nis = htmlspecialchars($data["nis"]);
   $nama = htmlspecialchars($data["nama"]);
   $email = htmlspecialchars($data["email"]);
   $jurusan = htmlspecialchars($data["jurusan"]);
+  $hobi = htmlspecialchars($data["hobi"]);
+  $makanan = htmlspecialchars($data["makanan"]);
   $gambarLama = htmlspecialchars($data["gambarLama"]);
 
   // cek apakah user pilih gambar baru atau tidak
@@ -23,11 +25,13 @@ function ubah($data)
   }
 
 
-  $query = "UPDATE mahasiswa SET
-				nrp = '$nrp',
+  $query = "UPDATE siswa SET
+				nis = '$nis',
 				nama = '$nama',
 				email = '$email',
 				jurusan = '$jurusan',
+				hobi = '$hobi',
+				makanan = '$makanan',
 				gambar = '$gambar'
 			  WHERE id = $id
 			";
